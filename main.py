@@ -57,6 +57,8 @@ def admin_panel():
             flag = admin.check_loan_status()
             if flag == True:
                 print("\nLoan activity is enable\n")
+            else:
+                print("\nLoan activity is disabled\n")
             
         elif choice == 9:
             print("Thank for visit!")

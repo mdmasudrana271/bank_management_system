@@ -99,7 +99,8 @@ class Bank:
             print("\nInsufficient balance to transfer")
         else:
             user.account.balance -= amount
-            person.account.balance +=amount
+            user.bank.balance -= amount
+            person.deposit(amount)
             print(f"\nfund transfer is successfull transfer amount is: {amount} from {user.account.account_no} to {other_ac}!\n")
             return True
 

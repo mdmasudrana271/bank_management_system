@@ -29,7 +29,7 @@ class User:
             curr_balance = self.account.balance
             self.account.balance -=amount
             self.bank.balance -=amount
-            trans = Transaction("deposit",datetime.now(),self.account.account_no,amount,curr_balance,self.account.balance)
+            trans = Transaction("withdraw",datetime.now(),self.account.account_no,amount,curr_balance,self.account.balance)
             self.transaction.append(trans)
             print(f"\nyour funds withdraw successfull withdraw amount is {amount} current balance is:{self.account.balance}\n")
         else:

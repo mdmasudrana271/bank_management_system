@@ -24,7 +24,10 @@ class Admin:
         return bank.check_balance
 
     def set_loan_status(self,flag):
-        self.bank.loan_available = flag
+        if flag == "True":
+            self.bank.loan_available = True
+        else:
+            self.bank.loan_available = False
     
 
     def check_loan_status(self):
