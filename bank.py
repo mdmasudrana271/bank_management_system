@@ -101,12 +101,21 @@ class Bank:
             user.account.balance -= amount
             user.bank.balance -= amount
             person.deposit(amount)
-            print(f"\nfund transfer is successfull transfer amount is: {amount} from {user.account.account_no} to {other_ac}!\n")
+            print(f"\nfund transfer is successfull transfer amount is: {amount} from {user.account.account_no} to {other_ac}\n")
             return True
 
     def req_loan(self,user,amount):
-        if self.loan_status == False or user.account.status == False or user.account.loan_time>1 or self.balance-amount<=0:
+        if self.loan_status == False:
+            print("\nLoan is not available")
             return False
+        elif user.account.status == False:
+            print("\nYour account is banned you can't request for loan")
+            return False
+        elif  user.account.loan_time>1:
+            print("\nYou have due loan amount you can't request for loan")
+            return False
+        elif self.balance-amount<=0:
+            print("\nInsufficient loan amount you can't request for loan")
         else:
             return True
 

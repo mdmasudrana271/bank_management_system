@@ -10,16 +10,16 @@ from user import User
 bd_bank = Bank("Bangladesh Bank",10000000)
 
 def admin_panel():
+    print("\n-----Admin Panel-----\n")
     user_id = input("Enter your admin user ID: ")
     password = int(input("Enter you admin password: "))
     admin = bd_bank.req_admin(user_id,password)
     if admin is None:
-        print("Invalid admin credential")
+        print("\nInvalid admin credential\n")
         return
     
     while True:
-        print("\n-----Admin Panel-----\n")
-        print("1. Create an account")
+        print("\n1. Create an account")
         print("2. Remove an user account")
         print("3. View all users account")
         print("4. Check total available balance of the bank")
@@ -61,16 +61,16 @@ def admin_panel():
                 print("\nLoan activity is disabled\n")
             
         elif choice == 9:
-            print("Thank for visit!")
+            print("\nThank for visit!\n")
             break
         else:
-            print("Invalid choice!")
+            print("\nInvalid choice!\n")
 
 
 def user_panel(user):
     print("\n-----User Panel-----\n")
     while True:
-        print("1. Deposit")
+        print("\n1. Deposit")
         print("2. Withdraw")
         print("3. Transfer")
         print("4. Request for loan")

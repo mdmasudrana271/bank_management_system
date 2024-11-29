@@ -21,7 +21,7 @@ class User:
             self.transaction.append(trans)
             print(f"\n{amount} Taka is deposited on your account {self.account.account_no}\n")
         else:
-            print(f"\nYour account is banned you can't deposit fund on this account!\n")
+            print(f"\nYour account is banned you can't deposit fund on this account\n")
     
     def withdraw(self,amount):
         flag = self.bank.check_withdraw(self,amount)
@@ -33,7 +33,7 @@ class User:
             self.transaction.append(trans)
             print(f"\nyour funds withdraw successfull withdraw amount is {amount} current balance is:{self.account.balance}\n")
         else:
-            print("\nThe bank is bankkrupt or your withdraw amount is exceeded unsuccessful transaction!\n")
+            print("\nThe bank is bankkrupt or your withdraw amount is exceeded unsuccessful transaction\n")
 
     
     def transfer(self,other_ac,amount):
